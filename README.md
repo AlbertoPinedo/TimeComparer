@@ -2,6 +2,8 @@
 
 TimeComparer es una aplicación de escritorio privada para coordinar horarios entre zonas. En lugar de enseñar una colección de relojes independientes, alinea todas las ciudades sobre una única línea temporal: cada columna es exactamente el mismo instante.
 
+![](assets/20260901_130643_screenshot01.jpeg)
+
 ## Qué incluye
 
 - Atajo global configurable (`Ctrl/⌘ + Shift + Espacio` por defecto).
