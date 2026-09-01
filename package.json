@@ -1,0 +1,68 @@
+{
+  "name": "timecomparer",
+  "version": "0.1.0",
+  "description": "A private, cross-platform world-time timeline for scheduling across time zones.",
+  "desktopName": "com.timecomparer.app",
+  "main": "electron/main.cjs",
+  "author": {
+    "name": "apinedo",
+    "email": "apinedo@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/AlbertoPinedo/TimeComparer",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "capture": "electron scripts/capture-preview.cjs",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "dist": "electron-builder --publish never",
+    "dist:win": "electron-builder --win --x64 --arm64 --publish never",
+    "dist:mac": "electron-builder --mac --universal --publish never",
+    "dist:linux": "electron-builder --linux --x64 --arm64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "43.4.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.timecomparer.app",
+    "productName": "TimeComparer",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/**/*",
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "category": "Utility",
+      "syncDesktopName": true,
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
